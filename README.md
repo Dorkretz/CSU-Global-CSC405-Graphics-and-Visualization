@@ -1,1 +1,1 @@
-# CSU-Global-CSC405-Graphics-and-Visualization
+Graphics & Visualization will provide an overview of foundational computer graphics and visualizations topics. Students will develop an understanding of rendering, foundational modeling, geometric modeling and computer animation in constructing simple organic forms. Primary emphasis will be on using appropriate modeling approaches with respect to space, time complexity and quality of images through the construction of computer graphics/visualizations.
