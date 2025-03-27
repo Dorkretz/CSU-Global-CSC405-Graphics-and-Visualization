@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sierpinski Gasket - WebGL</title>
+</head>
+<body>
+<canvas id="glCanvas" width="500" height="500"></canvas>
+
+<script>
+  const canvas = document.getElementById("glCanvas");
+  const gl = canvas.getContext("webgl");
+
+  if (!gl) {
+    alert("WebGL not supported");
+  }
+
+  // Vertex Shader
+  const vertexShaderSource = `
+            attribute vec2 a_position;
+            attribute vec3 a_color;
+            varying vec3 v_color;
+            void main() {
+                gl_PointSize = 2.0;
+                gl_Position = vec4(a_position, 0.0, 1.0);
+                v_color = a_color;
+            }
+        `;
+
+  // Fragment Shader
+  const fragmentShaderSource = `
+            precision mediump float;
+            varying vec3 v_color;
+            void main() {
+                gl_FragColor = vec4(v_color, 1.0); // Use interpolated vertex color
+            }
+        `;
+
+  // Compiles shaders
+  function compileShader(gl, type, source) {
+    const shader = gl.createShader(type);
+    gl.shaderSource(shader, source);
+    gl.compileShader(shader);
+    if (!gl.getShaderParameter(shader, gl.COMPILE_STATUS)) {
+      console.error("Shader Compilation Error: ", gl.getShaderInfoLog(shader));
+      gl.deleteShader(shader);
+      return null;
+    }
+    return shader;
+  }
+
+  // Creates shaders
+  const vertexShader = compileShader(gl, gl.VERTEX_SHADER, vertexShaderSource);
+  const fragmentShader = compileShader(gl, gl.FRAGMENT_SHADER, fragmentShaderSource);
+
+  // Creates program
+  const program = gl.createProgram();
+  gl.attachShader(program, vertexShader);
+  gl.attachShader(program, fragmentShader);
+  gl.linkProgram(program);
+  if (!gl.getProgramParameter(program, gl.LINK_STATUS)) {
+    console.error("Program Linking Error: ", gl.getProgramInfoLog(program));
+  }
+  gl.useProgram(program);
+
+  // Generates colors
+  function getPersistentColor(index) {
+    let key = `vertexColor${index}`;
+    let storedColor = localStorage.getItem(key);
+    if (storedColor) {
+      return JSON.parse(storedColor); // Use saved color
+    } else {
+      let newColor = [Math.random(), Math.random(), Math.random()];
+      localStorage.setItem(key, JSON.stringify(newColor)); // Save color
+      return newColor;
+    }
+  }
+
+  // Initializes colors
+  const initialColors = [
+    ...getPersistentColor(0),
+    ...getPersistentColor(1),
+    ...getPersistentColor(2)
+  ];
+
+  // Math for Sierpinski Gasket vertices & colors
+  function sierpinskiGasket(vertices, colors, depth) {
+    if (depth === 0) {
+      return { vertices, colors };
+    }
+    let newVertices = [];
+    let newColors = [];
+    for (let i = 0; i < vertices.length; i += 6) {
+      let [x1, y1, x2, y2, x3, y3] = vertices.slice(i, i + 6);
+      let [c1r, c1g, c1b, c2r, c2g, c2b, c3r, c3g, c3b] = colors.slice(i, i + 9);
+
+      // Midpoint edges
+      let mx1 = (x1 + x2) / 2, my1 = (y1 + y2) / 2;
+      let mx2 = (x2 + x3) / 2, my2 = (y2 + y3) / 2;
+      let mx3 = (x3 + x1) / 2, my3 = (y3 + y1) / 2;
+
+      // Midpoint colors
+      let mColor1 = [(c1r + c2r) / 2, (c1g + c2g) / 2, (c1b + c2b) / 2];
+      let mColor2 = [(c2r + c3r) / 2, (c2g + c3g) / 2, (c2b + c3b) / 2];
+      let mColor3 = [(c3r + c1r) / 2, (c3g + c1g) / 2, (c3b + c1b) / 2];
+
+      // Generates the 3 smaller triangles
+      newVertices.push(
+              x1, y1, mx1, my1, mx3, my3,
+              mx1, my1, x2, y2, mx2, my2,
+              mx3, my3, mx2, my2, x3, y3
+      );
+
+      newColors.push(
+              c1r, c1g, c1b, mColor1[0], mColor1[1], mColor1[2], mColor3[0], mColor3[1], mColor3[2],
+              mColor1[0], mColor1[1], mColor1[2], c2r, c2g, c2b, mColor2[0], mColor2[1], mColor2[2],
+              mColor3[0], mColor3[1], mColor3[2], mColor2[0], mColor2[1], mColor2[2], c3r, c3g, c3b
+      );
+    }
+    return sierpinskiGasket(newVertices, newColors, depth - 1);
+  }
+
+  // Initial triangle vertices
+  const initialVertices = [
+    -1.0, -1.0,   1.0, -1.0,   0.0, 1.0
+  ];
+
+  // Recursion depth
+  const depth = 6;
+  const { vertices, colors } = sierpinskiGasket(initialVertices, initialColors, depth);
+
+  // Creates buffers
+  const positionBuffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(vertices), gl.STATIC_DRAW);
+
+  const colorBuffer = gl.createBuffer();
+  gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+  gl.bufferData(gl.ARRAY_BUFFER, new Float32Array(colors), gl.STATIC_DRAW);
+
+  // Binds position attributes
+  const positionLocation = gl.getAttribLocation(program, "a_position");
+  gl.bindBuffer(gl.ARRAY_BUFFER, positionBuffer);
+  gl.enableVertexAttribArray(positionLocation);
+  gl.vertexAttribPointer(positionLocation, 2, gl.FLOAT, false, 0, 0);
+
+  // Binds color attributes
+  const colorLocation = gl.getAttribLocation(program, "a_color");
+  gl.bindBuffer(gl.ARRAY_BUFFER, colorBuffer);
+  gl.enableVertexAttribArray(colorLocation);
+  gl.vertexAttribPointer(colorLocation, 3, gl.FLOAT, false, 0, 0);
+
+  // Renders the image
+  function render() {
+    gl.clearColor(0.0, 1.0, 1.0, 1.0); // background
+    gl.clear(gl.COLOR_BUFFER_BIT);
+    gl.drawArrays(gl.TRIANGLES, 0, vertices.length / 2);
+  }
+
+  render();
+</script>
+</body>
+</html>
