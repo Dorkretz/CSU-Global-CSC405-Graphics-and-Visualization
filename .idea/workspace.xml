@@ -4,15 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a3f40ba-b6a5-4553-aab3-76993364875d" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/MOD4.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/MOD2.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="3a3f40ba-b6a5-4553-aab3-76993364875d" name="Changes" comment="Module 4 Critical Thinking&#10;&#10;amiliarize yourself with the concepts of vertices, shaders, buffers, and transformations in WebGL/OpenGL. Understand how vertices define the shape of an object, shaders control the appearance, buffers hold data, and transformations position and orient objects.&#10;&#10;Create a WebGL/OpenGL Program that produces a Colored Cube. Write the vertex and fragment shaders. The vertex shader should handle the vertex positions and transformations, while the fragment shader should define the colors.&#10;&#10;Set up a render loop that continuously updates and redraws the scene. Inside the loop, apply transformations, update uniform values, and issue draw calls. Inside the render loop, issue draw calls to render the cube. Ensure the shaders are correctly receiving vertex and color data.&#10;&#10;Run the program and observe the colored cube on the screen. Debug any issues that may arise, such as incorrect transformations or shader errors.&#10;&#10;Document the steps you took to create the colored cube. Explain the role of shaders, buffers, and transformations in achieving the final result. Reflect on what you've learned through this exercise. This should be approximately 3 paragraphs in length.">
+      <change afterPath="$PROJECT_DIR$/MOD5.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOD4.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,6 +23,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="MOD4" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="GitHubPullRequestSearchHistory">{
@@ -50,21 +50,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;Node.js.MOD4.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "DefaultHtmlFileTemplate": "HTML File",
+    "Node.js.MOD4.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "MOD5",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -81,11 +81,44 @@
       <option name="presentableId" value="Default" />
       <updated>1743991395759</updated>
       <workItem from="1743991396891" duration="341000" />
-      <workItem from="1744482132738" duration="1623000" />
+      <workItem from="1744482132738" duration="1847000" />
+      <workItem from="1744767806171" duration="1015000" />
     </task>
+    <task id="LOCAL-00001" summary="Module 4 Critical Thinking&#10;&#10;amiliarize yourself with the concepts of vertices, shaders, buffers, and transformations in WebGL/OpenGL. Understand how vertices define the shape of an object, shaders control the appearance, buffers hold data, and transformations position and orient objects.&#10;&#10;Create a WebGL/OpenGL Program that produces a Colored Cube. Write the vertex and fragment shaders. The vertex shader should handle the vertex positions and transformations, while the fragment shader should define the colors.&#10;&#10;Set up a render loop that continuously updates and redraws the scene. Inside the loop, apply transformations, update uniform values, and issue draw calls. Inside the render loop, issue draw calls to render the cube. Ensure the shaders are correctly receiving vertex and color data.&#10;&#10;Run the program and observe the colored cube on the screen. Debug any issues that may arise, such as incorrect transformations or shader errors.&#10;&#10;Document the steps you took to create the colored cube. Explain the role of shaders, buffers, and transformations in achieving the final result. Reflect on what you've learned through this exercise. This should be approximately 3 paragraphs in length.">
+      <option name="closed" value="true" />
+      <created>1744484060014</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1744484060014</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Module 4 Critical Thinking&#10;&#10;amiliarize yourself with the concepts of vertices, shaders, buffers, and transformations in WebGL/OpenGL. Understand how vertices define the shape of an object, shaders control the appearance, buffers hold data, and transformations position and orient objects.&#10;&#10;Create a WebGL/OpenGL Program that produces a Colored Cube. Write the vertex and fragment shaders. The vertex shader should handle the vertex positions and transformations, while the fragment shader should define the colors.&#10;&#10;Set up a render loop that continuously updates and redraws the scene. Inside the loop, apply transformations, update uniform values, and issue draw calls. Inside the render loop, issue draw calls to render the cube. Ensure the shaders are correctly receiving vertex and color data.&#10;&#10;Run the program and observe the colored cube on the screen. Debug any issues that may arise, such as incorrect transformations or shader errors.&#10;&#10;Document the steps you took to create the colored cube. Explain the role of shaders, buffers, and transformations in achieving the final result. Reflect on what you've learned through this exercise. This should be approximately 3 paragraphs in length.">
+      <option name="closed" value="true" />
+      <created>1744484131491</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1744484131491</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Module 4 Critical Thinking&#10;&#10;amiliarize yourself with the concepts of vertices, shaders, buffers, and transformations in WebGL/OpenGL. Understand how vertices define the shape of an object, shaders control the appearance, buffers hold data, and transformations position and orient objects.&#10;&#10;Create a WebGL/OpenGL Program that produces a Colored Cube. Write the vertex and fragment shaders. The vertex shader should handle the vertex positions and transformations, while the fragment shader should define the colors.&#10;&#10;Set up a render loop that continuously updates and redraws the scene. Inside the loop, apply transformations, update uniform values, and issue draw calls. Inside the render loop, issue draw calls to render the cube. Ensure the shaders are correctly receiving vertex and color data.&#10;&#10;Run the program and observe the colored cube on the screen. Debug any issues that may arise, such as incorrect transformations or shader errors.&#10;&#10;Document the steps you took to create the colored cube. Explain the role of shaders, buffers, and transformations in achieving the final result. Reflect on what you've learned through this exercise. This should be approximately 3 paragraphs in length." />
+    <option name="LAST_COMMIT_MESSAGE" value="Module 4 Critical Thinking&#10;&#10;amiliarize yourself with the concepts of vertices, shaders, buffers, and transformations in WebGL/OpenGL. Understand how vertices define the shape of an object, shaders control the appearance, buffers hold data, and transformations position and orient objects.&#10;&#10;Create a WebGL/OpenGL Program that produces a Colored Cube. Write the vertex and fragment shaders. The vertex shader should handle the vertex positions and transformations, while the fragment shader should define the colors.&#10;&#10;Set up a render loop that continuously updates and redraws the scene. Inside the loop, apply transformations, update uniform values, and issue draw calls. Inside the render loop, issue draw calls to render the cube. Ensure the shaders are correctly receiving vertex and color data.&#10;&#10;Run the program and observe the colored cube on the screen. Debug any issues that may arise, such as incorrect transformations or shader errors.&#10;&#10;Document the steps you took to create the colored cube. Explain the role of shaders, buffers, and transformations in achieving the final result. Reflect on what you've learned through this exercise. This should be approximately 3 paragraphs in length." />
   </component>
 </project>
