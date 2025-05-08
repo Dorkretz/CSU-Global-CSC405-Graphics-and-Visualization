@@ -4,10 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3a3f40ba-b6a5-4553-aab3-76993364875d" name="Changes" comment="Module 5 Portfolio Milestone&#10;&#10;This week’s discussion has introduced viewing, particularly with respect to various projections and related functions. In this assignment, you will briefly discuss several viewing functions (1-2 paragraphs) and then use the code snippet in section 5.4.6 to design an interactive Viewer using WebGL.">
-      <change afterPath="$PROJECT_DIR$/MOD6.html" afterDir="false" />
+    <list default="true" id="3a3f40ba-b6a5-4553-aab3-76993364875d" name="Changes" comment="Module 6 Critical Thinking&#10;&#10;This week’s discussion has provided an introduction to Lightning and Shading, particularly with respect to reflection and Vector Computations. In this assignment, you will briefly discuss a sphere object (in one paragraph), which is used as an example curved surface to illustrate shading calculations. Then use the code snippet starting in section 6.6 to design an interactive approximated and recursively subdivided sphere, using WebGL. Finally, complete a two paragraph reflection on what you did and how it went.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/MOD5.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/MOD6.html" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -38,7 +37,7 @@
     </favorite-branches>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="MOD5" />
+        <entry key="$PROJECT_DIR$" value="MOD6" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -63,23 +62,29 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;DefaultHtmlFileTemplate&quot;: &quot;HTML File&quot;,
-    &quot;JavaScript Debug.MOD5.html.executor&quot;: &quot;Run&quot;,
-    &quot;Node.js.MOD4.js.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;MOD6&quot;,
-    &quot;junie.onboarding.icon.badge.shown&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "DefaultHtmlFileTemplate": "HTML File",
+    "JavaScript Debug.MOD5.html.executor": "Run",
+    "Node.js.MOD4.js.executor": "Run",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "MOD8",
+    "junie.onboarding.icon.badge.shown": "true",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
+  </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -101,7 +106,8 @@
       <workItem from="1744769245809" duration="340000" />
       <workItem from="1745199930462" duration="382000" />
       <workItem from="1745200358014" duration="285000" />
-      <workItem from="1745775442050" duration="790000" />
+      <workItem from="1745775442050" duration="1381000" />
+      <workItem from="1746669778326" duration="867000" />
     </task>
     <task id="LOCAL-00001" summary="Module 4 Critical Thinking&#10;&#10;amiliarize yourself with the concepts of vertices, shaders, buffers, and transformations in WebGL/OpenGL. Understand how vertices define the shape of an object, shaders control the appearance, buffers hold data, and transformations position and orient objects.&#10;&#10;Create a WebGL/OpenGL Program that produces a Colored Cube. Write the vertex and fragment shaders. The vertex shader should handle the vertex positions and transformations, while the fragment shader should define the colors.&#10;&#10;Set up a render loop that continuously updates and redraws the scene. Inside the loop, apply transformations, update uniform values, and issue draw calls. Inside the render loop, issue draw calls to render the cube. Ensure the shaders are correctly receiving vertex and color data.&#10;&#10;Run the program and observe the colored cube on the screen. Debug any issues that may arise, such as incorrect transformations or shader errors.&#10;&#10;Document the steps you took to create the colored cube. Explain the role of shaders, buffers, and transformations in achieving the final result. Reflect on what you've learned through this exercise. This should be approximately 3 paragraphs in length.">
       <option name="closed" value="true" />
@@ -127,7 +133,31 @@
       <option name="project" value="LOCAL" />
       <updated>1744768889413</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Module 6 Critical Thinking&#10;&#10;This week’s discussion has provided an introduction to Lightning and Shading, particularly with respect to reflection and Vector Computations. In this assignment, you will briefly discuss a sphere object (in one paragraph), which is used as an example curved surface to illustrate shading calculations. Then use the code snippet starting in section 6.6 to design an interactive approximated and recursively subdivided sphere, using WebGL. Finally, complete a two paragraph reflection on what you did and how it went.">
+      <option name="closed" value="true" />
+      <created>1745779313208</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1745779313208</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Module 6 Critical Thinking&#10;&#10;This week’s discussion has provided an introduction to Lightning and Shading, particularly with respect to reflection and Vector Computations. In this assignment, you will briefly discuss a sphere object (in one paragraph), which is used as an example curved surface to illustrate shading calculations. Then use the code snippet starting in section 6.6 to design an interactive approximated and recursively subdivided sphere, using WebGL. Finally, complete a two paragraph reflection on what you did and how it went.">
+      <option name="closed" value="true" />
+      <created>1745779332047</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1745779332047</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Module 6 Critical Thinking&#10;&#10;This week’s discussion has provided an introduction to Lightning and Shading, particularly with respect to reflection and Vector Computations. In this assignment, you will briefly discuss a sphere object (in one paragraph), which is used as an example curved surface to illustrate shading calculations. Then use the code snippet starting in section 6.6 to design an interactive approximated and recursively subdivided sphere, using WebGL. Finally, complete a two paragraph reflection on what you did and how it went.">
+      <option name="closed" value="true" />
+      <created>1745779352395</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1745779352395</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -147,6 +177,7 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Module 4 Critical Thinking&#10;&#10;amiliarize yourself with the concepts of vertices, shaders, buffers, and transformations in WebGL/OpenGL. Understand how vertices define the shape of an object, shaders control the appearance, buffers hold data, and transformations position and orient objects.&#10;&#10;Create a WebGL/OpenGL Program that produces a Colored Cube. Write the vertex and fragment shaders. The vertex shader should handle the vertex positions and transformations, while the fragment shader should define the colors.&#10;&#10;Set up a render loop that continuously updates and redraws the scene. Inside the loop, apply transformations, update uniform values, and issue draw calls. Inside the render loop, issue draw calls to render the cube. Ensure the shaders are correctly receiving vertex and color data.&#10;&#10;Run the program and observe the colored cube on the screen. Debug any issues that may arise, such as incorrect transformations or shader errors.&#10;&#10;Document the steps you took to create the colored cube. Explain the role of shaders, buffers, and transformations in achieving the final result. Reflect on what you've learned through this exercise. This should be approximately 3 paragraphs in length." />
     <MESSAGE value="Module 5 Portfolio Milestone&#10;&#10;This week’s discussion has introduced viewing, particularly with respect to various projections and related functions. In this assignment, you will briefly discuss several viewing functions (1-2 paragraphs) and then use the code snippet in section 5.4.6 to design an interactive Viewer using WebGL." />
-    <option name="LAST_COMMIT_MESSAGE" value="Module 5 Portfolio Milestone&#10;&#10;This week’s discussion has introduced viewing, particularly with respect to various projections and related functions. In this assignment, you will briefly discuss several viewing functions (1-2 paragraphs) and then use the code snippet in section 5.4.6 to design an interactive Viewer using WebGL." />
+    <MESSAGE value="Module 6 Critical Thinking&#10;&#10;This week’s discussion has provided an introduction to Lightning and Shading, particularly with respect to reflection and Vector Computations. In this assignment, you will briefly discuss a sphere object (in one paragraph), which is used as an example curved surface to illustrate shading calculations. Then use the code snippet starting in section 6.6 to design an interactive approximated and recursively subdivided sphere, using WebGL. Finally, complete a two paragraph reflection on what you did and how it went." />
+    <option name="LAST_COMMIT_MESSAGE" value="Module 6 Critical Thinking&#10;&#10;This week’s discussion has provided an introduction to Lightning and Shading, particularly with respect to reflection and Vector Computations. In this assignment, you will briefly discuss a sphere object (in one paragraph), which is used as an example curved surface to illustrate shading calculations. Then use the code snippet starting in section 6.6 to design an interactive approximated and recursively subdivided sphere, using WebGL. Finally, complete a two paragraph reflection on what you did and how it went." />
   </component>
 </project>

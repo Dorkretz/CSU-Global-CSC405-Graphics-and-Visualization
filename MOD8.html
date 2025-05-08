@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Painter's Algorithm</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        canvas {
+            border: 1px solid #000;
+            margin: 20px auto;
+            display: block;
+        }
+        #info {
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: left;
+            padding: 10px;
+            background-color: #f0f0f0;
+            border-radius: 5px;
+        }
+        #order {
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+<h1>Painter's Algorithm</h1>
+<canvas id="canvas" width="500" height="400"></canvas>
+<div id="info">
+    <p>Objects are sorted by depth (z position)</p>
+    <p>Current drawing order: <span id="order">Loading...</span></p>
+    <p>Use arrow keys to move the green square and change its depth.</p>
+</div>
+
+<script>
+    // Canvas and context
+    const canvas = document.getElementById('canvas');
+    const ctx = canvas.getContext('2d');
+    const orderDisplay = document.getElementById('order');
+
+    // Three squares with colors, positions, and depths
+    const squares = [
+        {
+            color: 'red',
+            x: 150,
+            y: 100,
+            z: 3,  // Depth (higher number = farther away)
+            size: 150
+        },
+        {
+            color: 'green',
+            x: 200,
+            y: 150,
+            z: 2,  // Middle distance
+            size: 150
+        },
+        {
+            color: 'blue',
+            x: 250,
+            y: 200,
+            z: 1,  // Closest
+            size: 150
+        }
+    ];
+
+    // Keep track of pressed keys
+    const keyState = {};
+
+    // Keyboard event listeners
+    window.addEventListener('keydown', (e) => {
+        keyState[e.key] = true;
+    });
+
+    window.addEventListener('keyup', (e) => {
+        keyState[e.key] = false;
+    });
+
+    // Change the green square position based on arrow key presses
+    function updateGreenSquare() {
+        // Move the green square (index 1)
+        if (keyState['ArrowUp']) {
+            squares[1].y -= 5;
+            squares[1].z += 0.1; // Make it "farther" when moving up
+        }
+        if (keyState['ArrowDown']) {
+            squares[1].y += 5;
+            squares[1].z -= 0.1; // Make it "closer" when moving down
+        }
+        if (keyState['ArrowLeft']) {
+            squares[1].x -= 5;
+        }
+        if (keyState['ArrowRight']) {
+            squares[1].x += 5;
+        }
+
+        // Keep z-value within range
+        squares[1].z = Math.max(0.5, Math.min(squares[1].z, 5));
+    }
+
+    // Sort squares by z value
+    function sortSquaresByDepth(squares) {
+        // Make a copy and sort it from high to low
+        return [...squares].sort((a, b) => b.z - a.z);
+    }
+
+    // Draw square
+    function drawSquare(square) {
+        ctx.fillStyle = square.color;
+        ctx.fillRect(square.x, square.y, square.size, square.size);
+
+        // Add label for z
+        ctx.fillStyle = 'white';
+        ctx.font = '16px Arial';
+        ctx.fillText('z=' + square.z.toFixed(1), square.x + 10, square.y + 30);
+    }
+
+    // Main
+    function draw() {
+        // Update green square
+        updateGreenSquare();
+
+        // Clear canvas
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Sort squares by depth
+        const sortedSquares = sortSquaresByDepth(squares);
+
+        // Update order display
+        let orderText = "";
+        sortedSquares.forEach((square, index) => {
+            orderText += square.color.charAt(0).toUpperCase() + square.color.slice(1);
+            if (index < sortedSquares.length - 1) orderText += " → ";
+        });
+        orderDisplay.textContent = orderText;
+
+        // Draw squares in sorted order
+        sortedSquares.forEach(square => {
+            drawSquare(square);
+        });
+
+        // Request next frame
+        requestAnimationFrame(draw);
+    }
+
+    // Start animation
+    draw();
+</script>
+</body>
+</html>
